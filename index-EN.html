@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" href="data:image/png;base64,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">
+<title>EwX // Technical Memorandum · v0.1 + v0.2</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap');
+  :root {
+    --g:#00ff88;--gd:#00ff8844;--gg:#00ff8812;--a:#ffaa00;--ad:#ffaa0020;
+    --r:#ff3366;--rd:#ff336618;--c:#00d4ff;--cd:#00d4ff18;--p:#cc88ff;--pd:#cc88ff18;
+    --bg:#040d06;--bg2:#060f08;--bg3:#08150a;
+    --b:#00ff8818;--bb:#00ff8845;--t:#b0ffcc;--d:#3a6a4a;--d2:#5a8a6a;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--bg);color:var(--t);font-family:'Share Tech Mono',monospace;font-size:13px;line-height:1.6;
+    background-image:
+      radial-gradient(ellipse at 15% 20%,#001a0a,transparent 50%),
+      radial-gradient(ellipse at 85% 70%,#001508,transparent 50%),
+      repeating-linear-gradient(0deg,transparent,transparent 39px,#00ff8804 39px,#00ff8804 40px),
+      repeating-linear-gradient(90deg,transparent,transparent 39px,#00ff8804 39px,#00ff8804 40px);}
+  body::before{content:'';position:fixed;inset:0;
+    background:repeating-linear-gradient(0deg,transparent,transparent 2px,rgba(0,0,0,.1) 2px,rgba(0,0,0,.1) 4px);
+    pointer-events:none;z-index:999;}
+  .w{max-width:1000px;margin:0 auto;padding:24px 20px;}
+
+  /* NAV */
+  .nav{display:flex;justify-content:space-between;align-items:center;
+    border:1px solid var(--b);padding:10px 20px;margin-bottom:20px;background:var(--bg2);}
+  .nav-logo{font-family:'Orbitron',sans-serif;font-size:14px;font-weight:900;
+    color:var(--g);text-shadow:0 0 15px var(--g);letter-spacing:3px;}
+  .nav-logo span{color:var(--a);}
+  .nav-r{font-size:10px;color:var(--d2);letter-spacing:2px;display:flex;gap:20px;align-items:center;}
+  .dot{animation:bl 1.5s infinite;}
+  .dot.g{color:var(--g);} .dot.r{color:var(--r);}
+  @keyframes bl{0%,100%{opacity:1}50%{opacity:.1}}
+
+  /* VERSION TABS */
+  .vtabs{display:flex;gap:0;margin-bottom:20px;border:1px solid var(--b);}
+  .vtab{flex:1;padding:14px 20px;text-align:center;cursor:pointer;
+    border-right:1px solid var(--b);background:var(--bg2);transition:all .2s;}
+  .vtab:last-child{border-right:none;}
+  .vtab.active.v1{background:#00ff8808;border-bottom:2px solid var(--g);}
+  .vtab.active.v2{background:#cc88ff08;border-bottom:2px solid var(--p);}
+  .vtab-ver{font-family:'Orbitron',sans-serif;font-size:16px;font-weight:700;letter-spacing:2px;}
+  .vtab.active.v1 .vtab-ver{color:var(--g);text-shadow:0 0 12px var(--g);}
+  .vtab.active.v2 .vtab-ver{color:var(--p);text-shadow:0 0 12px var(--p);}
+  .vtab:not(.active) .vtab-ver{color:var(--d2);}
+  .vtab-lbl{font-size:10px;letter-spacing:2px;margin-top:3px;}
+  .vtab.active.v1 .vtab-lbl{color:var(--d2);}
+  .vtab.active.v2 .vtab-lbl{color:var(--d2);}
+  .vtab:not(.active) .vtab-lbl{color:var(--d);}
+
+  /* CONTENT SECTIONS */
+  .section{display:none;}
+  .section.active{display:block;}
+
+  /* HERO */
+  .hero{padding:28px 32px;margin-bottom:20px;position:relative;}
+  .hero.v1{border:1px solid var(--g);background:linear-gradient(135deg,#00ff8806,transparent);
+    animation:hg1 5s ease-in-out infinite;}
+  .hero.v2{border:1px solid var(--p);background:linear-gradient(135deg,#cc88ff06,transparent);
+    animation:hg2 5s ease-in-out infinite;}
+  @keyframes hg1{0%,100%{box-shadow:0 0 40px #00ff8810,inset 0 0 40px #00ff8806}
+    50%{box-shadow:0 0 70px #00ff8820,inset 0 0 60px #00ff880a}}
+  @keyframes hg2{0%,100%{box-shadow:0 0 40px #cc88ff10,inset 0 0 40px #cc88ff06}
+    50%{box-shadow:0 0 70px #cc88ff20,inset 0 0 60px #cc88ff0a}}
+  .hc{position:absolute;font-size:10px;letter-spacing:2px;}
+  .hc.tl{top:10px;left:14px;color:var(--d2);}
+  .hc.tr{top:10px;right:14px;}
+  .hc.bl{bottom:10px;left:14px;color:var(--d2);}
+  .hc.br{bottom:10px;right:14px;}
+  .hero.v1 .hc.tr{color:var(--g);}  .hero.v1 .hc.br{color:var(--a);}
+  .hero.v2 .hc.tr{color:var(--p);}  .hero.v2 .hc.br{color:var(--p);}
+  .hey{font-size:10px;letter-spacing:5px;color:var(--d2);margin-bottom:8px;}
+  .hn{font-family:'Orbitron',sans-serif;font-size:42px;font-weight:900;letter-spacing:5px;line-height:1;}
+  .hero.v1 .hn{color:var(--g);text-shadow:0 0 30px var(--g),0 0 60px var(--gd);}
+  .hero.v2 .hn{color:var(--p);text-shadow:0 0 30px var(--p),0 0 60px var(--pd);}
+  .hn span{color:var(--a);}
+  .hver{display:inline-block;margin-top:6px;padding:3px 14px;font-family:'Orbitron',sans-serif;
+    font-size:12px;letter-spacing:3px;}
+  .hero.v1 .hver{border:1px solid var(--g);color:var(--g);}
+  .hero.v2 .hver{border:1px solid var(--p);color:var(--p);}
+  .hfull{font-size:13px;color:var(--a);letter-spacing:2px;margin-top:10px;}
+  .hdesc{margin-top:12px;font-size:12px;color:var(--d2);border-left:2px solid;padding-left:14px;line-height:1.8;}
+  .hero.v1 .hdesc{border-color:var(--g);}
+  .hero.v2 .hdesc{border-color:var(--p);}
+  .hdesc em{color:var(--t);font-style:normal;}
+  .hstats{display:flex;gap:20px;flex-wrap:wrap;margin-top:18px;}
+  .hst{border-left:2px solid;padding-left:12px;}
+  .hero.v1 .hst{border-color:var(--g);}
+  .hero.v2 .hst{border-color:var(--p);}
+  .hsv{font-family:'Orbitron',sans-serif;font-size:18px;font-weight:700;}
+  .hero.v1 .hsv{color:var(--g);} .hero.v2 .hsv{color:var(--p);}
+  .hsv.a{color:var(--a)!important;} .hsv.c{color:var(--c)!important;}
+  .hsl{font-size:10px;color:var(--d2);letter-spacing:2px;}
+
+  /* PILLS */
+  .pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;}
+  .pill{border:1px solid;padding:4px 12px;font-size:10px;letter-spacing:1px;}
+  .pill.g{color:var(--g);border-color:var(--g);background:var(--gg);}
+  .pill.a{color:var(--a);border-color:var(--a);background:var(--ad);}
+  .pill.r{color:var(--r);border-color:var(--r);background:var(--rd);}
+  .pill.c{color:var(--c);border-color:var(--c);background:var(--cd);}
+  .pill.p{color:var(--p);border-color:var(--p);background:var(--pd);}
+
+  /* SECTION TITLE */
+  .st{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:4px;color:var(--d2);
+    margin-bottom:14px;display:flex;align-items:center;gap:12px;}
+  .st::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--bb),transparent);}
+  .st.p::after{background:linear-gradient(90deg,#cc88ff44,transparent);}
+
+  /* PANEL */
+  .p{border:1px solid var(--b);background:var(--bg2);padding:18px;position:relative;margin-bottom:16px;}
+  .p::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg,transparent,var(--gd),transparent);}
+  .p.purple{border-color:#cc88ff20;}
+  .p.purple::before{background:linear-gradient(90deg,transparent,#cc88ff33,transparent);}
+  .pt{font-family:'Orbitron',sans-serif;font-size:11px;color:var(--g);letter-spacing:3px;margin-bottom:14px;}
+  .pt.a{color:var(--a);} .pt.p{color:var(--p);}
+
+  .g2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px;}
+
+  /* ══ FREQUENCY STRIP ══ */
+  .fstrip-wrap{margin-bottom:6px;}
+  .fstrip-label{font-size:10px;color:var(--d2);letter-spacing:2px;margin-bottom:8px;}
+  .fstrip{position:relative;height:72px;background:#020a03;border:1px solid var(--b);margin-bottom:2px;}
+
+  /* segments */
+  .fs{position:absolute;top:4px;bottom:4px;border-radius:1px;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Share Tech Mono',monospace;font-size:8px;overflow:hidden;
+    cursor:pointer;transition:filter .15s;}
+  .fs:hover{filter:brightness(1.4);z-index:10;}
+  /* VERTICAL label — rotated 90deg counter-clockwise, with word wrap */
+  .fs span{
+    display:block;
+    writing-mode:vertical-lr;
+    transform:rotate(180deg);
+    text-orientation:mixed;
+    white-space:normal;
+    word-break:break-word;
+    overflow-wrap:break-word;
+    text-align:center;
+    padding:2px 1px;
+    line-height:1.2;
+    overflow:hidden;
+    max-height:100%;
+  }
+
+  /* tooltip */
+  .fs .tip{display:none;position:absolute;bottom:calc(100% + 8px);left:50%;
+    transform:translateX(-50%);background:#061008;border:1px solid var(--g);
+    padding:6px 10px;font-size:10px;color:var(--t);white-space:nowrap;z-index:20;
+    pointer-events:none;line-height:1.6;}
+  .fs .tip::after{content:'';position:absolute;top:100%;left:50%;transform:translateX(-50%);
+    border:5px solid transparent;border-top-color:var(--g);}
+  .fs:hover .tip{display:block;}
+
+  /* tick marks */
+  .fstrip-ticks{position:relative;height:16px;}
+  .ftick{position:absolute;transform:translateX(-50%);font-size:9px;color:var(--d);top:0;}
+  .ftick::before{content:'';position:absolute;top:-18px;left:50%;width:1px;height:10px;background:var(--d);}
+
+  /* scale */
+  .fstrip-scale{display:flex;justify-content:space-between;font-size:9px;color:var(--d);margin-top:2px;}
+
+  /* BLIND ZONE */
+  .blind-zone{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(
+    45deg,#ff336608,#ff336608 4px,transparent 4px,transparent 8px);
+    border-left:1px dashed #ff336640;border-right:1px dashed #ff336640;}
+
+  /* LoRa / telemetry colors */
+  --lora:#ff8c00;
+  --telem:#00ffdd;
+
+  /* ══ TARGET TABLE ══ */
+  .tt{width:100%;border-collapse:collapse;}
+  .tt th{text-align:left;color:var(--d2);font-size:10px;letter-spacing:2px;
+    border-bottom:1px solid var(--b);padding:4px 8px 10px 0;font-weight:normal;}
+  .tt td{padding:9px 8px 9px 0;border-bottom:1px solid #00ff880a;font-size:12px;vertical-align:top;}
+  .tt tr:last-child td{border-bottom:none;}
+  .tt tr:hover td{background:#00ff8804;}
+  .fq{font-family:'Orbitron',sans-serif;font-size:12px;}
+  .fq.g{color:var(--g);} .fq.a{color:var(--a);} .fq.r{color:var(--r);} .fq.c{color:var(--c);} .fq.p{color:var(--p);}
+  .bs{display:inline-block;border:1px solid;padding:1px 6px;font-size:9px;letter-spacing:1px;}
+  .bs.ok{color:var(--g);border-color:var(--g);}
+  .bs.part{color:var(--a);border-color:var(--a);}
+  .bs.no{color:var(--r);border-color:var(--r);}
+  .bs.plan{color:var(--p);border-color:var(--p);}
+
+  /* MODES */
+  .mode-box{border:1px solid;padding:16px;background:var(--bg3);position:relative;}
+  .mode-box.m1{border-color:#00ff8830;} .mode-box.m2{border-color:#00d4ff30;}
+  .mode-tag{position:absolute;top:-1px;left:16px;font-size:9px;letter-spacing:3px;padding:0 8px;background:var(--bg);}
+  .mode-box.m1 .mode-tag{color:var(--g);border:1px solid var(--g);}
+  .mode-box.m2 .mode-tag{color:var(--c);border:1px solid var(--c);}
+  .mode-title{font-family:'Orbitron',sans-serif;font-size:13px;margin:8px 0 12px;}
+  .mode-box.m1 .mode-title{color:var(--g);} .mode-box.m2 .mode-title{color:var(--c);}
+  .mrow{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid #00ff880a;font-size:12px;}
+  .mrow:last-child{border-bottom:none;}
+  .ml2{color:var(--d2);} .mv2{color:var(--t);}
+  .mv2.g{color:var(--g);font-family:'Orbitron',sans-serif;}
+  .mv2.c{color:var(--c);font-family:'Orbitron',sans-serif;}
+
+  /* ROADMAP */
+  .ritem{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #cc88ff0d;align-items:flex-start;}
+  .ritem:last-child{border-bottom:none;}
+  .rph{flex-shrink:0;width:90px;}
+  .rver{font-family:'Orbitron',sans-serif;font-size:14px;font-weight:700;color:var(--p);}
+  .rbud{color:var(--a);font-size:11px;margin-top:3px;}
+  .rtm{color:var(--d2);font-size:10px;}
+  .rtit{color:var(--p);font-size:13px;margin-bottom:6px;}
+  .rli{color:var(--d2);font-size:11px;list-style:none;}
+  .rli li{padding:2px 0;} .rli li::before{content:'→ ';color:var(--p);}
+  .rbar{height:3px;background:var(--b);margin-top:8px;}
+  .rbf{height:100%;box-shadow:0 0 6px var(--p);}
+
+  /* OUTPUT */
+  .oitem{display:flex;gap:14px;padding:10px 0;border-bottom:1px solid #00ff880a;align-items:flex-start;}
+  .oitem:last-child{border-bottom:none;}
+  .oico{font-size:22px;flex-shrink:0;width:32px;text-align:center;}
+  .otit{font-family:'Orbitron',sans-serif;font-size:11px;color:var(--g);letter-spacing:2px;margin-bottom:3px;}
+  .odesc{font-size:12px;color:var(--d2);}  .odesc em{color:var(--t);font-style:normal;}
+
+  /* FOOTER */
+  .footer{border:1px solid var(--b);padding:12px 20px;margin-top:16px;
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:11px;color:var(--d);flex-wrap:wrap;gap:8px;}
+  .footer span{color:var(--g);}
+
+  @media(max-width:640px){
+    .g2{grid-template-columns:1fr;}
+    .hn{font-size:28px;}
+    .vtab-ver{font-size:13px;}
+    .hstats{gap:12px;}
+  }
+</style>
+</head>
+<body>
+<div class="w">
+
+<!-- NAV -->
+<div class="nav">
+  <div class="nav-logo">SPEKTR<span>.</span>AI</div>
+  <div class="nav-r">
+    <span>// TECHNICAL MEMORANDUM · EwX</span>
+    <span class="dot g">■ DOCUMENT ACTIVE</span>
+  </div>
+</div>
+
+<!-- VERSION TABS -->
+<div class="vtabs">
+  <div class="vtab v1 active" onclick="switchTab('v1')">
+    <div class="vtab-ver">v0.1</div>
+    <div class="vtab-lbl">CURRENT CAPABILITIES</div>
+  </div>
+  <div class="vtab v2" onclick="switchTab('v2')">
+    <div class="vtab-ver">v0.2</div>
+    <div class="vtab-lbl">DEVELOPMENT ROADMAP</div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     SECTION v0.1
+══════════════════════════════════════════════ -->
+<div id="sec-v1" class="section active">
+
+  <div class="hero v1">
+    <div class="hc tl">// TECHNICAL MEMORANDUM · CURRENT CAPABILITIES</div>
+    <div class="hc tr dot g">■ PRODUCTION READY</div>
+    <div class="hc bl">GPSDO SYNC · MULTI-CHANNEL SDR · 25–1699 MHz</div>
+    <div class="hc br">🔒 CONFIDENTIAL</div>
+    <div class="hey">// RADIO MONITORING SYSTEM</div>
+    <div class="hn">Ew<span>X</span></div>
+    <div class="hver">v0.1 · OPERATIONAL SYSTEM</div>
+    <div class="hfull">WIDEBAND MULTI-CHANNEL SDR · RADIO MONITORING</div>
+    <div class="hdesc">
+      A phase- and frequency-synchronized, software-tunable multi-channel radio receiver.<br>
+      <em>Covers key tactical communications, UAV, and aviation frequencies. Real-time operation. Geolocation.</em>
+    </div>
+    <div class="hstats">
+      <div class="hst"><div class="hsv">25–1699</div><div class="hsl">MHz · RANGE</div></div>
+      <div class="hst"><div class="hsv a">GPSDO</div><div class="hsl">10 MHz + PPS</div></div>
+      <div class="hst"><div class="hsv c">5–10</div><div class="hsl">TARGETS · MODE 1</div></div>
+      <div class="hst"><div class="hsv">50–100+</div><div class="hsl">SOURCES · MODE 2</div></div>
+    </div>
+  </div>
+
+  <div class="pills">
+    <div class="pill g">✅ 25–1699 MHz</div>
+    <div class="pill g">✅ GPSDO SYNCHRONIZATION</div>
+    <div class="pill g">✅ MULTI-CHANNEL RECEPTION</div>
+    <div class="pill g">✅ KML / GOOGLE EARTH</div>
+    <div class="pill a">⚠️ WiFi 2.4/5.8 GHz — NOT IN THIS VERSION</div>
+  </div>
+
+  <!-- FREQ STRIP v0.1 -->
+  <div class="st">01 // FREQUENCY RANGE COVERAGE · v0.1</div>
+  <div class="p">
+    <div class="pt">📡 SPECTRUM MAP · 25 MHz – 1699 MHz</div>
+    <div class="fstrip-wrap">
+      <div class="fstrip-label">EwX v0.1 OPERATING RANGE (hover over a segment for details)</div>
+      <div class="fstrip">
+
+        <!-- VHF tactical 30-88 -->
+        <div class="fs" style="left:0.3%;width:4%;background:#00ff8825;border:1px solid #00ff8845;color:#00ff8899;">
+          <span>VHF tactical</span>
+          <div class="tip">📻 30–88 MHz<br>Analog tactical comms<br>Battalion / company<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+
+        <!-- VHF High 136-174 -->
+        <div class="fs" style="left:6.5%;width:2.3%;background:#00ff8820;border:1px solid #00ff8840;color:#00ff8899;">
+          <span>VHF High</span>
+          <div class="tip">📻 136–174 MHz<br>VHF High Band<br>Police · security · military<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+
+        <!-- Military aviation 225-400 -->
+        <div class="fs" style="left:12%;width:10.5%;background:#00d4ff20;border:1px solid #00d4ff40;color:#00d4ff99;">
+          <span>Aviation / NATO</span>
+          <div class="tip">✈️ 225–400 MHz<br>Aviation · NATO · military<br>Air Force · Army<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+
+        <!-- TETRA 380-430 -->
+        <div class="fs" style="left:21.5%;width:3%;background:#ffaa0025;border:1px solid #ffaa0045;color:#ffaa0099;">
+          <span>TETRA</span>
+          <div class="tip">🔒 380–430 MHz<br>TETRA · secure communications<br>EU armies · law enforcement · police<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+
+        <!-- DMR/P25 400-470 -->
+        <div class="fs" style="left:23%;width:2.7%;background:#ffaa0018;border:1px solid #ffaa0035;color:#ffaa0088;">
+          <span>DMR/P25</span>
+          <div class="tip">📡 400–470 MHz<br>DMR · P25 · Motorola/Harris<br>Modern secure communications<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+
+        <!-- R-168 Akveduk 30-512 marker (background frame) -->
+        <div class="fs" style="left:1%;width:29%;background:transparent;border:1px dashed #00ff8812;color:transparent;pointer-events:none;">
+          <span style="opacity:0">.</span>
+        </div>
+        <!-- Separate R-168 label to avoid conflict -->
+        <div style="position:absolute;left:3%;top:2px;font-size:7px;color:#00ff8830;letter-spacing:1px;pointer-events:none;">— R-168 Akveduk FHSS 30–512 —</div>
+
+        <!-- 433 MHz: drone control -->
+        <div class="fs" style="left:24.5%;width:1.4%;background:#00ff8845;border:1px solid #00ff8880;color:#00ff88;">
+          <span>433 ctrl</span>
+          <div class="tip">🚁 433 MHz · Drone control<br>FPV · DJI telemetry<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+
+        <!-- 433 MHz: LoRa / LPWAN — slightly to the right, different color -->
+        <div class="fs" style="left:25.9%;width:1.2%;background:#ff8c0040;border:1px solid #ff8c0080;color:#ff8c00;">
+          <span>LoRa 433</span>
+          <div class="tip">📶 433 MHz · LoRa / LoRaWAN<br>IoT telemetry · LPWAN<br>Sensor monitoring · smart networks<br>Used in UAV telemetry<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+
+        <!-- 840 MHz drone telemetry -->
+        <div class="fs" style="left:48%;width:1.2%;background:#00ffdd35;border:1px solid #00ffdd70;color:#00ffdd;">
+          <span>840 telem</span>
+          <div class="tip">📡 840 MHz · UAV telemetry<br>Downlink data channel<br>Coordinates · status · video OSD<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+
+        <!-- 868 MHz: telemetry + LoRa -->
+        <div class="fs" style="left:50%;width:1.2%;background:#00ffdd40;border:1px solid #00ffdd80;color:#00ffdd;">
+          <span>868 telem</span>
+          <div class="tip">📡 868 MHz · drone telemetry<br>MAVLink · SBUS · control<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+        <div class="fs" style="left:51.3%;width:1%;background:#ff8c0035;border:1px solid #ff8c0070;color:#ff8c00;">
+          <span>LoRa 868</span>
+          <div class="tip">📶 868 MHz · LoRa / LoRaWAN EU<br>Primary European IoT band<br>UAV telemetry · smart fields<br>SX1276/SX1278 modems<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+
+        <!-- 915 MHz: telemetry -->
+        <div class="fs" style="left:53%;width:1.2%;background:#00ffdd35;border:1px solid #00ffdd70;color:#00ffdd;">
+          <span>915 telem</span>
+          <div class="tip">📡 915 MHz · drone telemetry<br>ISM band · FPV control<br>SiK Radio · RFD900 modems<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+        <div class="fs" style="left:54.3%;width:1%;background:#ff8c0035;border:1px solid #ff8c0070;color:#ff8c00;">
+          <span>LoRa 915</span>
+          <div class="tip">📶 915 MHz · LoRa / LoRaWAN US/AU<br>ISM 915 · widely used in UAVs<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+
+        <!-- GSM 900 -->
+        <div class="fs" style="left:51%;width:1.8%;background:#5a8a6a20;border:1px solid #5a8a6a35;color:#5a8a6a;">
+          <span>GSM 900</span>
+          <div class="tip">📱 880–960 MHz<br>GSM/LTE Band 8<br>Mobile networks · monitoring<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+
+        <!-- ADS-B 1090 -->
+        <div class="fs" style="left:63%;width:1.8%;background:#00d4ff30;border:1px solid #00d4ff55;color:#00d4ff;">
+          <span>ADS-B 1090</span>
+          <div class="tip">✈️ 1090 MHz<br>ADS-B · Mode-S<br>Aircraft transponders<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+
+        <!-- 1200-1300 Analog FPV -->
+        <div class="fs" style="left:70%;width:6%;background:#5a8a6a15;border:1px solid #5a8a6a30;color:#5a8a6a;">
+          <span>Analog FPV</span>
+          <div class="tip">📡 1200–1300 MHz<br>Analog FPV video<br>Older-generation drones<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+
+        <!-- GPS GLONASS -->
+        <div class="fs" style="left:89%;width:3%;background:#ffaa0030;border:1px solid #ffaa0055;color:#ffaa00;">
+          <span>GPS/GLONASS</span>
+          <div class="tip">🛰️ 1575 / 1602 MHz<br>GPS L1 / GLONASS L1<br>Drone navigation · guidance<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+
+        <!-- Iridium -->
+        <div class="fs" style="left:96%;width:2.5%;background:#ff336625;border:1px solid #ff336645;color:#ff3366;">
+          <span>Iridium</span>
+          <div class="tip">🛰️ 1624–1625 MHz<br>Iridium · satellite communications<br>Detection of command-guided Shahed-class UAVs<br><span style="color:var(--g)">✅ COVERED</span></div>
+        </div>
+
+      </div><!-- /fstrip -->
+
+      <!-- TICK MARKS -->
+      <div style="position:relative;height:20px;margin-top:2px;">
+        <div class="ftick" style="left:0.3%">25</div>
+        <div class="ftick" style="left:12%">225</div>
+        <div class="ftick" style="left:24.5%">433</div>
+        <div class="ftick" style="left:50%">868</div>
+        <div class="ftick" style="left:53%">915</div>
+        <div class="ftick" style="left:63%">1090</div>
+        <div class="ftick" style="left:89%">1575</div>
+        <div class="ftick" style="left:96%">1624</div>
+        <div class="ftick" style="left:99%">1699</div>
+      </div>
+
+      <!-- LEGEND -->
+      <div style="display:flex;gap:14px;flex-wrap:wrap;font-size:10px;color:var(--d2);margin-top:10px;">
+        <span><span style="color:var(--g)">■</span> Drones · control · UAVs</span>
+        <span><span style="color:#00ffdd">■</span> Drone telemetry (840/868/915)</span>
+        <span><span style="color:#ff8c00">■</span> LoRa / LoRaWAN / LPWAN</span>
+        <span><span style="color:var(--c)">■</span> Aviation · ADS-B</span>
+        <span><span style="color:var(--a)">■</span> Tactical comms · GPS · TETRA</span>
+        <span><span style="color:var(--r)">■</span> Satellite · Iridium</span>
+        <span><span style="color:var(--d2)">■</span> GSM · analog FPV</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- TARGET TABLE v0.1 -->
+  <div class="st">02 // MONITORING TARGETS · CURRENT CAPABILITIES</div>
+
+  <div class="p" style="margin-bottom:16px;">
+    <div class="pt">🚁 DRONES AND UAVs</div>
+    <table class="tt">
+      <thead><tr><th>CLASS</th><th>FREQUENCIES</th><th>CAPABILITY</th><th>COMMENT</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>FPV drones (DIY, kamikaze)</td>
+          <td class="fq g">433 / 868 / 915 MHz</td>
+          <td><span class="bs ok">✅ FULL</span></td>
+          <td style="font-size:11px;color:var(--d2)">Control and telemetry · pulsed signals · well identifiable</td>
+        </tr>
+        <tr>
+          <td>DJI / Autel / mass-market</td>
+          <td>
+            <div class="fq g" style="font-size:11px;">433 / 868 / 915 MHz</div>
+            <div style="font-size:10px;color:var(--d2);margin-top:2px">telemetry / control</div>
+          </td>
+          <td><span class="bs part">⚠️ PARTIAL</span></td>
+          <td style="font-size:11px;color:var(--d2)">Control channel is within the reception range. 2.4/5.8 GHz video stream is outside v0.1</td>
+        </tr>
+        <tr>
+          <td>Bayraktar / Orlan / military UAVs</td>
+          <td class="fq g">400–450 / 868 / 1200–1300 MHz</td>
+          <td><span class="bs ok">✅ FULL</span></td>
+          <td style="font-size:11px;color:var(--d2)">Control channels and GPS are within the EwX range</td>
+        </tr>
+        <tr>
+          <td>Shahed-136 / HESA</td>
+          <td class="fq g">868 / 915 / 1575 MHz</td>
+          <td><span class="bs ok">✅ FULL</span></td>
+          <td style="font-size:11px;color:var(--d2)">Command channel around 900 MHz + GPS navigation at 1575 MHz + Iridium at 1624 MHz</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="p" style="margin-bottom:16px;">
+    <div class="pt">📻 TACTICAL AND SPECIAL-PURPOSE COMMUNICATIONS</div>
+    <table class="tt">
+      <thead><tr><th>RANGE</th><th>COMMUNICATION TYPE</th><th>USERS</th><th>STATUS</th></tr></thead>
+      <tbody>
+        <tr><td class="fq g">30–88 MHz</td><td>Analog tactical comms</td><td>Battalion / company</td><td><span class="bs ok">✅</span></td></tr>
+        <tr><td class="fq g">136–174 MHz</td><td>VHF High Band</td><td>Police · security · military</td><td><span class="bs ok">✅</span></td></tr>
+        <tr><td class="fq g">225–400 MHz</td><td>Aviation · NATO</td><td>Air Force · Army · NATO</td><td><span class="bs ok">✅</span></td></tr>
+        <tr><td class="fq g">380–430 MHz</td><td>TETRA</td><td>EU armies · law enforcement · police</td><td><span class="bs ok">✅</span></td></tr>
+        <tr><td class="fq g">400–470 MHz</td><td>DMR · P25 · Motorola</td><td>Modern secure communications</td><td><span class="bs ok">✅</span></td></tr>
+        <tr><td class="fq g">30–512 MHz</td><td>R-168 “Akveduk” · FHSS</td><td>Russian military</td><td><span class="bs ok">✅</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="p" style="margin-bottom:16px;">
+    <div class="pt">🛰️ NAVIGATION · AVIATION · SATELLITE</div>
+    <table class="tt">
+      <thead><tr><th>SYSTEM</th><th>FREQUENCY</th><th>USE CASE</th><th>STATUS</th></tr></thead>
+      <tbody>
+        <tr><td>GPS L1</td><td class="fq g">1575.42 MHz</td><td>Drone navigation</td><td><span class="bs ok">✅</span></td></tr>
+        <tr><td>GLONASS L1</td><td class="fq g">1602 MHz</td><td>Navigation</td><td><span class="bs ok">✅</span></td></tr>
+        <tr><td>ADS-B / Mode-S</td><td class="fq g">1090 MHz</td><td>Aircraft transponders</td><td><span class="bs ok">✅</span></td></tr>
+        <tr><td>Iridium</td><td class="fq g">1624–1625 MHz</td><td>Satellite communications · Shahed</td><td><span class="bs ok">✅</span></td></tr>
+        <tr><td>PMR / amateur radio</td><td class="fq g">433 / 446 MHz</td><td>PMCs · irregular forces</td><td><span class="bs ok">✅</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="p" style="margin-bottom:16px;">
+    <div class="pt" style="color:#00ffdd;">📡 DRONE TELEMETRY · DOWNLINK DATA CHANNELS</div>
+    <table class="tt">
+      <thead><tr><th>CHANNEL</th><th>FREQUENCY</th><th>PROTOCOL / USE CASE</th><th>STATUS</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>UAV telemetry · lower band</td>
+          <td><span class="fq" style="color:#00ffdd;">840 MHz</span></td>
+          <td style="font-size:11px;color:var(--d2)">Downlink data channel · coordinates · status · video OSD data</td>
+          <td><span class="bs ok">✅</span></td>
+        </tr>
+        <tr>
+          <td>Telemetry · ISM EU</td>
+          <td><span class="fq" style="color:#00ffdd;">868 MHz</span></td>
+          <td style="font-size:11px;color:var(--d2)">MAVLink · SBUS · flight-controller telemetry</td>
+          <td><span class="bs ok">✅</span></td>
+        </tr>
+        <tr>
+          <td>Telemetry · ISM US/AU</td>
+          <td><span class="fq" style="color:#00ffdd;">915 MHz</span></td>
+          <td style="font-size:11px;color:var(--d2)">SiK Radio · RFD900 · UAV telemetry · range up to 40 km</td>
+          <td><span class="bs ok">✅</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top:10px;padding:10px;border:1px solid #00ffdd20;background:#00ffdd08;font-size:11px;color:var(--d2);">
+      💡 Telemetry is the <span style="color:#00ffdd">downlink data stream</span> from the drone to the operator: GPS coordinates, altitude, speed, battery level, and motor status. Intercepting telemetry provides the precise <span style="color:var(--g)">UAV location and route</span> even without visual contact.
+    </div>
+  </div>
+
+  <div class="p" style="margin-bottom:16px;">
+    <div class="pt" style="color:#ff8c00;">📶 LoRa / LoRaWAN / LPWAN · LONG-RANGE IoT NETWORKS</div>
+    <table class="tt">
+      <thead><tr><th>STANDARD</th><th>FREQUENCY</th><th>USE CASE</th><th>STATUS</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>LoRa / LoRaWAN EU</td>
+          <td><span class="fq" style="color:#ff8c00;">433 MHz</span></td>
+          <td style="font-size:11px;color:var(--d2)">IoT sensors · smart fields · asset tracking · UAV telemetry</td>
+          <td><span class="bs ok">✅</span></td>
+        </tr>
+        <tr>
+          <td>LoRa / LoRaWAN EU868</td>
+          <td><span class="fq" style="color:#ff8c00;">868 MHz</span></td>
+          <td style="font-size:11px;color:var(--d2)">Primary European band · SX1276/SX1278 · range up to 15 km · UAV telemetry</td>
+          <td><span class="bs ok">✅</span></td>
+        </tr>
+        <tr>
+          <td>LoRa / LoRaWAN US915</td>
+          <td><span class="fq" style="color:#ff8c00;">915 MHz</span></td>
+          <td style="font-size:11px;color:var(--d2)">ISM 915 · widely used in UAVs · Helium Network · LPWAN</td>
+          <td><span class="bs ok">✅</span></td>
+        </tr>
+        <tr>
+          <td>Sigfox / NB-IoT / LTE-M</td>
+          <td><span class="fq" style="color:#ff8c00;">868 / 915 MHz</span></td>
+          <td style="font-size:11px;color:var(--d2)">LPWAN · industrial IoT · smart infrastructure</td>
+          <td><span class="bs ok">✅</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top:10px;padding:10px;border:1px solid #ff8c0020;background:#ff8c0008;font-size:11px;color:var(--d2);">
+      💡 LoRa modems (SX1276, SX1278) are increasingly used for <span style="color:#ff8c00">UAV telemetry and control</span> over long distances thanks to low power consumption and strong signal penetration. EwX reliably detects them in the 433/868/915 MHz bands.
+    </div>
+  </div>
+
+  <!-- MODES v0.1 -->
+  <div class="st">03 // OPERATING MODES</div>
+  <div class="g2">
+    <div class="mode-box m1">
+      <div class="mode-tag">MODE 1</div>
+      <div class="mode-title">⚡ QUASI-TRACKING</div>
+      <div class="mrow"><span class="ml2">Mode</span><span class="mv2 g">REAL TIME</span></div>
+      <div class="mrow"><span class="ml2">Parallel channels</span><span class="mv2 g">up to 5</span></div>
+      <div class="mrow"><span class="ml2">Simultaneous targets</span><span class="mv2 g">5–10</span></div>
+      <div class="mrow"><span class="ml2">Coordinate update</span><span class="mv2 g">1 Hz</span></div>
+      <div class="mrow"><span class="ml2">Use case</span><span class="mv2">Tracking · targeting support</span></div>
+    </div>
+    <div class="mode-box m2">
+      <div class="mode-tag">MODE 2</div>
+      <div class="mode-title">🔍 SITUATIONAL OVERVIEW</div>
+      <div class="mrow"><span class="ml2">Mode</span><span class="mv2 c">SCANNING</span></div>
+      <div class="mrow"><span class="ml2">Scan step</span><span class="mv2 c">2.5 MHz</span></div>
+      <div class="mrow"><span class="ml2">Sources in area</span><span class="mv2 c">50–100+</span></div>
+      <div class="mrow"><span class="ml2">Update</span><span class="mv2 c">every 5–10 s</span></div>
+      <div class="mrow"><span class="ml2">Use case</span><span class="mv2">Radio intelligence · common operating picture</span></div>
+    </div>
+  </div>
+
+  <!-- OUTPUT -->
+  <div class="st">04 // DATA DELIVERY FORMAT</div>
+  <div class="p">
+    <div class="pt">📤 OUTPUT · INTEGRATION</div>
+    <div class="oitem">
+      <div class="oico">📱</div>
+      <div><div class="otit">TELEGRAM · PRIVATE CHANNEL</div>
+      <div class="odesc">Automatic upload to a private channel. <em>Real-time operational alerting.</em></div></div>
+    </div>
+    <div class="oitem">
+      <div class="oico">🗺️</div>
+      <div><div class="otit">KML / KMZ · GOOGLE EARTH</div>
+      <div class="odesc">Each source is a marker on the map. <em>Color and icon</em> = target type. Attributes: <em>frequency · level · confidence % · time.</em></div></div>
+    </div>
+    <div class="oitem">
+      <div class="oico">🎯</div>
+      <div><div class="otit">CLASSIFICATION WITH CONFIDENCE SCORE</div>
+      <div class="odesc">Source type based on its signature. The field <em>"classification confidence %"</em> — algorithmic transparency.</div></div>
+    </div>
+  </div>
+
+</div><!-- /sec-v1 -->
+
+
+<!-- ══════════════════════════════════════════════
+     SECTION v0.2
+══════════════════════════════════════════════ -->
+<div id="sec-v2" class="section">
+
+  <div class="hero v2">
+    <div class="hc tl">// HARDWARE R&D · INVESTMENT ROUND</div>
+    <div class="hc tr">💎 BREAKTHROUGH</div>
+    <div class="hc bl">NEW MOTHERBOARD · WIDEBAND RF FRONT-ENDS · ONBOARD DIRECTION FINDING</div>
+    <div class="hc br">🔬 IN DEVELOPMENT</div>
+    <div class="hey">// CUSTOM HARDWARE</div>
+    <div class="hn">Ew<span>X</span></div>
+    <div class="hver">v0.2 · HARDWARE</div>
+    <div class="hfull">AIRBORNE COHERENT DIRECTION FINDER · 25 MHz – 6 GHz · ~800 g WEIGHT</div>
+    <div class="hdesc">
+      The EwX v0.1 prototype is built on the basis of an operational <em>Prototype</em> — a 5-channel coherent SDR based on RTL chips, covering 25–1699 MHz.<br>
+      The next step is the development of a <em>new custom motherboard</em> with wideband RF front-ends (not RTL),
+      delivering characteristics at the level of the <em>Reference Unit</em>, but in a &lt;1 kg form factor.
+      This creates a fundamentally new device class: <em>airborne coherent direction finder</em>, which does not currently exist on the market.
+    </div>
+    <div class="hstats">
+      <div class="hst"><div class="hsv">25–6000</div><div class="hsl">MHz · RANGE</div></div>
+      <div class="hst"><div class="hsv a">&lt;1 kg</div><div class="hsl">WEIGHT CLASS</div></div>
+      <div class="hst"><div class="hsv c">5-ch.</div><div class="hsl">COHERENT</div></div>
+      <div class="hst"><div class="hsv" style="color:#ff3366;">$1–3M</div><div class="hsl">INVESTMENT ROUND</div></div>
+    </div>
+  </div>
+
+  <div class="pills">
+    <div class="pill p">🔬 HARDWARE R&D</div>
+    <div class="pill a">💎 NEW DEVICE CLASS</div>
+    <div class="pill g">✅ Operational Prototype · system foundation</div>
+    <div class="pill c">🎯 Reference Unit · target characteristics</div>
+    <div class="pill r">🚁 Goal: drone-mountable</div>
+  </div>
+
+  <!-- PROBLEM AND SOLUTION -->
+  <div class="st p">01 // TECHNICAL GAP · WHAT DOES NOT EXIST ON THE MARKET</div>
+  <div class="g2">
+
+    <div class="p purple">
+      <div class="pt p">📦 PROTOTYPE · OPERATIONAL SYSTEM</div>
+      <div class="mrow"><span class="ml2">Chips</span><span class="mv2" style="color:#ff336699">RTL2832U + R820T2</span></div>
+      <div class="mrow"><span class="ml2">Range</span><span class="mv2">25–1699 MHz</span></div>
+      <div class="mrow"><span class="ml2">Channels</span><span class="mv2">5 · coherent</span></div>
+      <div class="mrow"><span class="ml2">Weight</span><span class="mv2 g">~400 g</span></div>
+      <div class="mrow"><span class="ml2">Price</span><span class="mv2 g">~$8750</span></div>
+      <div class="mrow"><span class="ml2">Role</span><span class="mv2" style="color:#ffaa00">Prototype / PoC</span></div>
+      <div class="mrow"><span class="ml2">Limitation</span><span class="mv2" style="color:#ff3366">Range, noise, dynamic range</span></div>
+      <div style="margin-top:12px;font-size:10px;color:var(--d2);border-top:1px solid #cc88ff15;padding-top:10px;">
+        A solid basis for demonstrating the concept. Not sufficient for operational deployment or full drone-spectrum coverage.
+      </div>
+    </div>
+
+    <div class="p purple">
+      <div class="pt p">🎯 REFERENCE UNIT · TARGET CHARACTERISTICS</div>
+      <div class="mrow"><span class="ml2">Type</span><span class="mv2" style="color:var(--p)">Professional military direction finder</span></div>
+      <div class="mrow"><span class="ml2">Range</span><span class="mv2 p" style="color:var(--p)">Wideband · all UAV channels</span></div>
+      <div class="mrow"><span class="ml2">RF front-ends</span><span class="mv2 p" style="color:var(--p)">Wideband · not RTL</span></div>
+      <div class="mrow"><span class="ml2">Accuracy</span><span class="mv2 p" style="color:var(--p)">Operational-grade · field-proven</span></div>
+      <div class="mrow"><span class="ml2">Form factor</span><span class="mv2" style="color:#ff3366">Ground station</span></div>
+      <div class="mrow"><span class="ml2">Weight</span><span class="mv2" style="color:#ff3366">Heavy · not airborne</span></div>
+      <div class="mrow"><span class="ml2">Role</span><span class="mv2" style="color:var(--p)">Performance reference for v0.2</span></div>
+      <div style="margin-top:12px;font-size:10px;color:var(--d2);border-top:1px solid #cc88ff15;padding-top:10px;">
+        The device has been field-proven in combat conditions. The task for v0.2 is to take these characteristics and fit them into a &lt;1 kg form factor.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- GOAL -->
+  <div class="p purple" style="margin-bottom:16px;border-color:#cc88ff40;box-shadow:0 0 30px #cc88ff08;">
+    <div class="pt p" style="font-size:13px;">🚀 v0.2 GOAL · REVOLUTIONARY BREAKTHROUGH</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:8px;">
+      <div style="padding:14px;border:1px solid #cc88ff25;background:#cc88ff06;text-align:center;">
+        <div style="font-family:'Orbitron',sans-serif;font-size:22px;color:var(--p);text-shadow:0 0 15px var(--p);">NEW</div>
+        <div style="font-family:'Orbitron',sans-serif;font-size:11px;color:var(--p);margin-top:2px;">MOTHERBOARD</div>
+        <div style="font-size:11px;color:var(--d2);margin-top:8px;line-height:1.6;">Custom development from scratch. No RTL chips — wideband RF transceivers, for example AD9361-class. 5 coherent channels. GPSDO. 25 MHz – 6 GHz.</div>
+      </div>
+      <div style="padding:14px;border:1px solid #cc88ff25;background:#cc88ff06;text-align:center;">
+        <div style="font-family:'Orbitron',sans-serif;font-size:22px;color:var(--a);text-shadow:0 0 15px var(--a);">&lt;1 kg</div>
+        <div style="font-family:'Orbitron',sans-serif;font-size:11px;color:var(--a);margin-top:2px;">AIRBORNE DIRECTION FINDER</div>
+        <div style="font-size:11px;color:var(--d2);margin-top:8px;line-height:1.6;">Weight comparable to the operational Prototype (~400–800 g). Suitable for mounting on a carrier drone. Airborne direction finding is a fundamentally new capability.</div>
+      </div>
+      <div style="padding:14px;border:1px solid #cc88ff25;background:#cc88ff06;text-align:center;">
+        <div style="font-family:'Orbitron',sans-serif;font-size:22px;color:#00ff88;text-shadow:0 0 15px #00ff88;">360°</div>
+        <div style="font-family:'Orbitron',sans-serif;font-size:11px;color:#00ff88;margin-top:2px;">DRONE COVERAGE</div>
+        <div style="font-size:11px;color:var(--d2);margin-top:8px;line-height:1.6;">Coverage of the full UAV spectrum: 433 / 868 / 915 MHz + 2.4 GHz (DJI OcuSync) + 5.8 GHz (FPV). Full closure of v0.1 blind zones.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FREQ STRIP v0.2 -->
+  <div class="st p">02 // TARGET FREQUENCY COVERAGE · v0.2</div>
+  <div class="p purple">
+    <div class="pt p">📡 SPECTRUM MAP · 25 MHz – 6000 MHz</div>
+    <div class="fstrip-wrap">
+      <div class="fstrip-label" style="color:var(--p)">GREEN: covered in v0.1 · PURPLE: added in v0.2 · HATCHED: v0.1 blind zone → eliminated</div>
+      <div class="fstrip" style="border-color:#cc88ff22;height:80px;">
+
+        <!-- Existing v0.1 -->
+        <div class="fs" style="left:0%;width:28.3%;background:#00ff8815;border:1px solid #00ff8830;color:#00ff8870;font-size:7px;">
+          <span>v0.1<br>25–1699 MHz</span>
+          <div class="tip">✅ Entire v0.1 range<br>25–1699 MHz<br>All existing capabilities<br><span style="color:var(--g)">ALREADY OPERATIONAL</span></div>
+        </div>
+
+        <!-- Key v0.1 markers -->
+        <div class="fs" style="left:4%;width:0.8%;background:#00ff8860;border:1px solid #00ff88;">
+          <span style="font-size:6px;">433</span>
+          <div class="tip">🚁 433 MHz · drones ✅</div>
+        </div>
+        <div class="fs" style="left:13.8%;width:0.8%;background:#00ff8860;border:1px solid #00ff88;">
+          <span style="font-size:6px;">868</span>
+          <div class="tip">🚁 868 MHz · drones ✅</div>
+        </div>
+        <div class="fs" style="left:25.8%;width:0.8%;background:#ffaa0060;border:1px solid #ffaa00;">
+          <span style="font-size:6px;">GPS</span>
+          <div class="tip">🛰️ 1575 MHz · GPS ✅</div>
+        </div>
+        <div class="fs" style="left:27%;width:0.8%;background:#ff336650;border:1px solid #ff3366;">
+          <span style="font-size:6px;">Irid</span>
+          <div class="tip">🛰️ 1624 MHz · Iridium ✅</div>
+        </div>
+
+        <!-- BLIND ZONES -->
+        <div class="blind-zone" style="left:28.5%;width:10.2%;">
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:7px;color:#ff336670;white-space:nowrap;text-align:center;">1700–<br>2400</div>
+        </div>
+        <div class="blind-zone" style="left:44.5%;width:50.3%;">
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:8px;color:#ff336670;white-space:nowrap;">2500–5800 MHz · v0.1 blind zone</div>
+        </div>
+
+        <!-- NEW: 2.4 GHz WiFi / DJI OcuSync -->
+        <div class="fs" style="left:39%;width:5.3%;background:#cc88ff30;border:1px solid #cc88ff70;color:#cc88ff;">
+          <span>2.4G<br>DJI</span>
+          <div class="tip">🆕 2400 MHz · WiFi / DJI OcuSync<br>Video channel of mass-market drones<br><span style="color:var(--p)">⚡ ADDED IN v0.2</span></div>
+        </div>
+
+        <!-- NEW: 5.8 GHz FPV -->
+        <div class="fs" style="left:95%;width:4%;background:#cc88ff35;border:1px solid #cc88ff70;color:#cc88ff;">
+          <span>5.8G<br>FPV</span>
+          <div class="tip">🆕 5800 MHz · FPV video<br>DJI · new-generation kamikaze drones<br><span style="color:var(--p)">⚡ ADDED IN v0.2</span></div>
+        </div>
+
+      </div><!-- /fstrip -->
+
+      <div style="position:relative;height:20px;margin-top:2px;">
+        <div class="ftick" style="left:0%">25</div>
+        <div class="ftick" style="left:16.7%">1000</div>
+        <div class="ftick" style="left:28.3%">1699</div>
+        <div class="ftick" style="left:39%">2400</div>
+        <div class="ftick" style="left:66.7%">4000</div>
+        <div class="ftick" style="left:95%">5800</div>
+        <div class="ftick" style="left:99.5%">6000</div>
+      </div>
+
+      <div style="display:flex;gap:16px;flex-wrap:wrap;font-size:10px;color:var(--d2);margin-top:10px;">
+        <span><span style="color:var(--g)">■</span> Operational in v0.1</span>
+        <span><span style="color:var(--p)">■</span> Added in v0.2</span>
+        <span><span style="background:repeating-linear-gradient(45deg,#ff336620,#ff336620 3px,transparent 3px,transparent 6px);display:inline-block;width:12px;height:10px;vertical-align:middle;border:1px dashed #ff336650;"></span> v0.1 blind zone → eliminated</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- INVESTMENT PLAN -->
+  <div class="st p">03 // INVESTMENT PLAN · HARDWARE R&D</div>
+  <div class="p purple">
+    <div class="pt p">💰 FUNDING STRUCTURE</div>
+
+    <!-- Total budget -->
+    <div style="padding:16px;border:1px solid #cc88ff30;background:#cc88ff06;margin-bottom:20px;text-align:center;">
+      <div style="font-size:10px;color:var(--d2);letter-spacing:3px;margin-bottom:6px;">TOTAL ROUND SIZE</div>
+      <div style="font-family:'Orbitron',sans-serif;font-size:36px;font-weight:900;color:var(--p);text-shadow:0 0 30px var(--p);">$1 – 3M</div>
+      <div style="font-size:11px;color:var(--d2);margin-top:6px;">Hardware R&D · 12–18 months · New coherent platform, 25 MHz – 6 GHz</div>
+      <div style="font-size:10px;color:#ff336699;margin-top:4px;">* Estimate confirmed through discussions around the Prototype: development of a custom 5-channel coherent receiver — $1M / 18 months under standard funding</div>
+    </div>
+
+    <div class="ritem">
+      <div class="rph">
+        <div class="rver">Stage 1</div>
+        <div class="rbud">~$500K–800K</div>
+        <div class="rtm">12–18 months</div>
+      </div>
+      <div style="flex:1">
+        <div class="rtit">🔧 Development of the new motherboard</div>
+        <ul class="rli">
+          <li>Replacing RTL chips with wideband RF transceivers, for example AD9361-class · 25 MHz – 6 GHz range</li>
+          <li>5-channel coherent architecture · shared GPSDO · phase synchronization</li>
+          <li>Target characteristics: Reference Unit level · operational deployment</li>
+          <li>Custom PCB · FPGA/SoC integration for onboard processing</li>
+          <li>Circuit design · prototype manufacturing · testing · validation</li>
+        </ul>
+        <div class="rbar"><div class="rbf" style="width:60%;background:var(--p)"></div></div>
+      </div>
+    </div>
+
+    <div class="ritem">
+      <div class="rph">
+        <div class="rver">Stage 2</div>
+        <div class="rbud">~$300K–500K</div>
+        <div class="rtm">6–9 months</div>
+      </div>
+      <div style="flex:1">
+        <div class="rtit">🚁 Miniaturization · onboard form factor</div>
+        <ul class="rli">
+          <li>Weight reduction to 800 g – 1 kg · suitable for mounting on a carrier drone</li>
+          <li>Power optimization · autonomous operation from UAV onboard power</li>
+          <li>Enclosure · vibration and thermal protection · field conditions</li>
+          <li>Integration with SPEKTR.AI · unified air + ground map</li>
+        </ul>
+        <div class="rbar"><div class="rbf" style="width:40%;background:var(--p)"></div></div>
+      </div>
+    </div>
+
+    <div class="ritem">
+      <div class="rph">
+        <div class="rver">Stage 3</div>
+        <div class="rbud">~$200K–500K</div>
+        <div class="rtm">3–6 months</div>
+      </div>
+      <div style="flex:1">
+        <div class="rtit">🧠 ML + software layer</div>
+        <ul class="rli">
+          <li>ML signature classification · training on real field IQ data</li>
+          <li>Automatic drone-type recognition: DJI / FPV / military / Shahed</li>
+          <li>REST API · C2/C4ISR integration · NATO STANAG export</li>
+          <li>Palantir-style analytics layer · real-time filtering and visualization</li>
+        </ul>
+        <div class="rbar"><div class="rbf" style="width:25%;background:var(--p)"></div></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- WHY THIS IS A BREAKTHROUGH -->
+  <div class="st p">04 // COMPETITIVE ANALYSIS · WHY THIS DOES NOT EXIST ON THE MARKET</div>
+  <div class="p purple">
+    <div class="pt p">📊 COMPARISON WITH EXISTING SOLUTIONS</div>
+    <table class="tt">
+      <thead><tr>
+        <th>PARAMETER</th>
+        <th style="color:var(--g)">Prototype<br><span style="font-size:9px;color:var(--d2)">Operational prototype</span></th>
+        <th style="color:var(--p)">Reference Unit<br><span style="font-size:9px;color:var(--d2)">Reference characteristics</span></th>
+        <th style="color:var(--a)">EwX v0.2<br><span style="font-size:9px;color:var(--d2)">Development target</span></th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>Range</td>
+          <td class="fq g">25–1699 MHz</td>
+          <td class="fq p">All UAV channels</td>
+          <td class="fq a">25–6000 MHz</td>
+        </tr>
+        <tr>
+          <td>RF front-ends</td>
+          <td style="color:#ff336699">RTL chips (consumer-grade)</td>
+          <td style="color:var(--p)">Wideband · professional-grade</td>
+          <td style="color:var(--a)">Wideband · new</td>
+        </tr>
+        <tr>
+          <td>WiFi / 2.4–5.8 GHz</td>
+          <td><span class="bs no">❌ NO</span></td>
+          <td><span class="bs ok">✅ YES</span></td>
+          <td><span class="bs plan">✅ PLANNED</span></td>
+        </tr>
+        <tr>
+          <td>Weight</td>
+          <td class="fq g">~400 g</td>
+          <td style="color:#ff336699">Ground station</td>
+          <td class="fq a">&lt;1 kg</td>
+        </tr>
+        <tr>
+          <td>Drone mounting</td>
+          <td><span class="bs part">⚠️ LIMITED</span></td>
+          <td><span class="bs no">❌ NOT POSSIBLE</span></td>
+          <td><span class="bs plan">✅ YES</span></td>
+        </tr>
+        <tr>
+          <td>Coherence</td>
+          <td><span class="bs ok">✅ 5-ch.</span></td>
+          <td><span class="bs ok">✅ Yes</span></td>
+          <td><span class="bs plan">✅ 5-ch.</span></td>
+        </tr>
+        <tr>
+          <td>Operational-grade characteristics</td>
+          <td><span class="bs part">⚠️ PoC level</span></td>
+          <td><span class="bs ok">✅ Proven</span></td>
+          <td><span class="bs plan">🎯 Target</span></td>
+        </tr>
+        <tr>
+          <td>Unit cost</td>
+          <td class="fq g">~$8750</td>
+          <td style="color:var(--d2)">~50'000 USD</td>
+          <td class="fq a">R&D: $1–3M</td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top:14px;padding:12px;border:1px solid #cc88ff25;background:#cc88ff06;font-size:11px;color:var(--d2);line-height:1.8;">
+      <span style="color:var(--p)">💡 Conclusion:</span> Devices with Reference Unit-level operational characteristics exist — but they are heavy ground stations.
+      Devices under &lt;1 kg exist (Prototype) — but their range and RF front-end quality are not sufficient for operational deployment.
+      <span style="color:var(--a)">The niche of a “lightweight wideband coherent direction finder mountable on a drone” is absent from the market.</span>
+      EwX v0.2 closes this gap.
+    </div>
+  </div>
+
+  <!-- MARKET OPPORTUNITY -->
+  <div class="st p">05 // MARKET OPPORTUNITY · WHY NOW</div>
+  <div class="g2">
+    <div class="p purple">
+      <div class="pt p">🎯 APPLICATIONS</div>
+      <div class="oitem">
+        <div class="oico">🪖</div>
+        <div><div class="otit" style="color:var(--p)">MILITARY</div><div class="odesc">Airborne detection and direction finding of hostile drones. Battlefield radio-environment reconnaissance. EW cueing.</div></div>
+      </div>
+      <div class="oitem">
+        <div class="oico">✈️</div>
+        <div><div class="otit" style="color:var(--p)">AIRPORTS / AVIATION</div><div class="odesc">Airborne perimeter monitoring. Detection of unauthorized UAVs. Integration with air-traffic control.</div></div>
+      </div>
+      <div class="oitem">
+        <div class="oico">🏛️</div>
+        <div><div class="otit" style="color:var(--p)">CRITICAL INFRASTRUCTURE</div><div class="odesc">Nuclear power plants, ports, government sites. Real-time airborne direction finding.</div></div>
+      </div>
+      <div class="oitem">
+        <div class="oico">🔬</div>
+        <div><div class="otit" style="color:var(--p)">RESEARCH / NATO</div><div class="odesc">Universities, defense laboratories, NATO agencies. Platform for SIGINT R&D.</div></div>
+      </div>
+    </div>
+    <div class="p purple">
+      <div class="pt p">📈 WHY NOW</div>
+      <div style="padding:10px 0;border-bottom:1px solid #cc88ff0d;font-size:12px;color:var(--d2);">
+        <span style="color:var(--p)">→</span> The number of drones on the battlefield is growing exponentially. Standard ground-based direction finders cannot keep pace with threat mobility.
+      </div>
+      <div style="padding:10px 0;border-bottom:1px solid #cc88ff0d;font-size:12px;color:var(--d2);">
+        <span style="color:var(--p)">→</span> DJI and FPV drones operate at 2.4 / 5.8 GHz — a range many ground-based direction finders do not cover.
+      </div>
+      <div style="padding:10px 0;border-bottom:1px solid #cc88ff0d;font-size:12px;color:var(--d2);">
+        <span style="color:var(--p)">→</span> An airborne direction finder can observe hundreds of sq. km, while a ground unit is horizon-limited. This is a fundamentally different coverage area.
+      </div>
+      <div style="padding:10px 0;border-bottom:1px solid #cc88ff0d;font-size:12px;color:var(--d2);">
+        <span style="color:var(--p)">→</span> Regulators and authorities (Bundesnetzagentur, EASA, Ministries of Defence) are creating demand for certified airborne monitoring solutions.
+      </div>
+      <div style="padding:10px 0;font-size:12px;color:var(--d2);">
+        <span style="color:var(--a)">→</span> The operational EwX v0.1 prototype already demonstrates the concept. Investment in v0.2 is the transition from PoC to an operational product.
+      </div>
+    </div>
+  </div>
+
+</div><!-- /sec-v2 -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <div>EwX // <span>TECHNICAL MEMORANDUM · v0.1 + v0.2 ROADMAP</span></div>
+  <div>SPEKTR.AI FORMAT // <span>CONFIDENTIAL</span></div>
+  <div>© 2026 // <span>ALL RIGHTS RESERVED</span></div>
+</div>
+
+</div><!-- /wrap -->
+
+<script>
+function switchTab(ver) {
+  document.querySelectorAll('.vtab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelector('.vtab.' + ver).classList.add('active');
+  document.getElementById('sec-' + ver).classList.add('active');
+}
+</script>
+</body>
+</html>
